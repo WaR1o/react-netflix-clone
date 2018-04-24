@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import ErrorBoundary from "./ErrorBoundary";
+import Search from "./Search";
 
 const App = () => {
   return (
-    <div>
-      <p>Webpack Hometask</p>
-    </div>
+    <ErrorBoundary>
+      <h1>TV Shows Scout</h1>
+      <Search />
+    </ErrorBoundary>
   );
 };
 
