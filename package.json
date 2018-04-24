@@ -1,14 +1,12 @@
 {
-  "name": "hometask-webpack",
-  "version": "1.0.0",
+  "name": "netflix-hometask",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "set NODE_ENV=development && webpack --mode development",
-    "prod":
-      "set NODE_ENV=production && webpack --mode production --devtool source-map",
-    "start":
-      "set NODE_ENV=development && webpack-dev-server --mode development --open",
+    "prod": "set NODE_ENV=production && webpack --mode production --devtool source-map",
+    "start": "set NODE_ENV=development && webpack-dev-server --mode development --open",
     "test": "set NODE_ENV=test && jest"
   },
   "author": "Pavel_Dederchuk",
