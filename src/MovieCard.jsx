@@ -2,9 +2,9 @@ import React from "react";
 
 const MovieCard = props => (
   <div>
-    <img alt={props.title} src={props.poster} />
+    <img alt={props.title} src={props.poster_path} />
     <span>{props.title}</span>
-    <span>{props.year}</span>
+    <span>{props.release_date}</span>
     <br />
     {props.genres.map((genre, i) => <span key={i}>{genre}</span>)}
   </div>
