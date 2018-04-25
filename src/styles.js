@@ -3,13 +3,14 @@ import styled from "styled-components";
 // Colors
 export const darkRed = "#E60000";
 export const darkGrey = "#484848";
+export const grey = "#737373";
 export const lighterGray = "#F7F7F7";
 export const borderRadius = "5px";
 
 // Styled components
 export const Wrapper = styled.div`
-  width: 80%;
-  margin: 0 10%;
+  width: 70%;
+  margin: 0 15%;
 `;
 
 export const Text = styled.span`
@@ -34,11 +35,12 @@ export const SearchInput = styled.input`
   margin-bottom: 20px;
   width: 100%;
   height: 40px;
-  background-color: black;
   border: none;
   border-radius: ${borderRadius};
-  outline: none;
   border-bottom: 1px solid ${darkRed};
+  outline: none;
+  background-color: black;
+  color: white;
 `;
 
 export const SearchBar = styled.div`
@@ -85,4 +87,44 @@ export const StyledFooter = styled.div`
   padding: 20px 40px;
   background-color: ${darkGrey};
   color: ${darkRed};
+`;
+
+export const Card = styled.div`
+  grid-column: span 1;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  overflow: hidden;
+`;
+
+export const CardTitle = styled.span`
+  float: left;
+  font-size: 20px;
+  font-weight: 700;
+  color: ${darkGrey};
+`;
+
+export const Year = styled.span`
+  display: inline-block;
+  float: right;
+  padding: 2px;
+  border: 1px solid ${darkGrey};
+  border-radius: 4px;
+`;
+
+export const Genre = styled.span`
+  color: ${grey};
+`;
+
+export const DetailedMovie = styled.div`
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  max-height: 600px;
+  justify-content: space-evenly;
+  background-color: ${lighterGray};
+`;
+
+export const Poster = styled.img`
+  width: 100%;
+  object-fit: contain;
 `;

@@ -1,8 +1,8 @@
 import React from "react";
+import { AppTitle, InfoWrapper, SearchBar, SearchWrapper } from "./styles";
 import Search from "./Search";
 import Counter from "./Counter";
 import SortBy from "./SortBy";
-import { AppTitle, InfoWrapper, SearchBar, SearchWrapper } from "./styles";
 
 const Header = () => (
   <React.Fragment>
