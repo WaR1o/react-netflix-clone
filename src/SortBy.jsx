@@ -1,11 +1,11 @@
 import React from "react";
 
 const SortBy = () => (
-  <p>
+  <div>
     <span>Sort by </span>
-    <button className="ui button">release date</button>
-    <button className="ui button">rating</button>
-  </p>
+    <span>year </span>
+    <span>rating</span>
+  </div>
 );
 
 export default SortBy;

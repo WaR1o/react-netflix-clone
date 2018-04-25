@@ -1,15 +1,22 @@
 import React from "react";
+import { Text, Button, SearchInput } from "./styles";
 
 const Search = () => (
   <div>
-    <h2>Find your movie</h2>
-    <div className="ui input">
-      <input placeholder="Search..." type="text" />
-    </div>
-    <span>search by</span>
-    <button className="ui button">Title</button>
-    <button className="ui button">Genre</button>
-    <button className="ui button">Search</button>
+    <Text big>
+      <p>Find your movie</p>
+    </Text>
+    <SearchInput placeholder="Search..." type="text" />
+    <Text>search by</Text>
+    <Button>
+      <Text>Title</Text>
+    </Button>
+    <Button>
+      <Text>Genre</Text>
+    </Button>
+    <Button active big floatR>
+      <Text>Search</Text>
+    </Button>
   </div>
 );
 

@@ -1,5 +1,6 @@
 import React from "react";
+import { StyledFooter } from "./styles";
 
-const Footer = () => <p>Footer</p>;
+const Footer = () => <StyledFooter>netflixroulette</StyledFooter>;
 
 export default Footer;
