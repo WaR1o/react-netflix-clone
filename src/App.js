@@ -6,20 +6,32 @@ import MoviesList from "./MoviesList";
 import MovieDetails from "./MovieDetails";
 import Footer from "./Footer";
 import { Wrapper } from "./styles";
+import { MOVIES_LIST } from "./mock-data";
 
-const App = () => {
-  return (
-    <ErrorBoundary>
-      <Wrapper>
-        <Header />
-        <MoviesList />
-        <MovieDetails />
-        <Footer />
-      </Wrapper>
-    </ErrorBoundary>
-  );
-};
+class App extends React.Component {
+  state = {
+    movies: [],
+    searchBy: "",
+    sortBy: "",
+    searchTerm: ""
+  };
+
+  componentDidMount() {
+    this.setState({ movies: MOVIES_LIST.data });
+  }
+
+  render() {
+    return (
+      <ErrorBoundary>
+        <Wrapper>
+          <Header moviesAmount={this.state.movies.length} />
+          <MoviesList />
+          <MovieDetails />
+          <Footer />
+        </Wrapper>
+      </ErrorBoundary>
+    );
+  }
+}
 
 export default App;
-
-ReactDOM.render(<App />, document.getElementById("app"));

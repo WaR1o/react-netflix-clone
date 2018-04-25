@@ -1,5 +1,5 @@
 import React from "react";
 
-const Counter = () => <span>7 movies found</span>;
+const Counter = props => <span>{props.number} movies found</span>;
 
 export default Counter;

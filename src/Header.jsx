@@ -4,7 +4,7 @@ import Search from "./Search";
 import Counter from "./Counter";
 import SortBy from "./SortBy";
 
-const Header = () => (
+const Header = props => (
   <React.Fragment>
     <SearchBar>
       <SearchWrapper>
@@ -13,8 +13,8 @@ const Header = () => (
       </SearchWrapper>
     </SearchBar>
     <InfoWrapper>
-      <Counter />
-      <SortBy />
+      {props.moviesAmount ? <Counter number={props.moviesAmount} /> : ""}
+      {props.moviesAmount ? <SortBy /> : ""}
     </InfoWrapper>
   </React.Fragment>
 );
