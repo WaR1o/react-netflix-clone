@@ -1,5 +1,12 @@
-import React from "react";
+import React from 'react';
+import { connect } from 'react-redux';
 
-const Counter = props => <span>{props.number} movies found</span>;
+const Counter = props => (
+  <React.Fragment>{props.movies.length ? <span>{props.movies.length} movies found</span> : ''}</React.Fragment>
+);
 
-export default Counter;
+const mapStateToProps = state => ({
+  movies: state.movies
+});
+
+export default connect(mapStateToProps)(Counter);

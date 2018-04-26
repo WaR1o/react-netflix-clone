@@ -1,8 +1,8 @@
-import React from "react";
-import { AppTitle, InfoWrapper, SearchBar, SearchWrapper } from "./styles";
-import Search from "./Search";
-import Counter from "./Counter";
-import SortBy from "./SortBy";
+import React from 'react';
+import { AppTitle, InfoWrapper, SearchBar, SearchWrapper } from './styles';
+import Search from './Search';
+import Counter from './Counter';
+import SortBy from './SortBy';
 
 const Header = props => (
   <React.Fragment>
@@ -13,8 +13,8 @@ const Header = props => (
       </SearchWrapper>
     </SearchBar>
     <InfoWrapper>
-      {props.moviesAmount ? <Counter number={props.moviesAmount} /> : ""}
-      {props.moviesAmount ? <SortBy /> : ""}
+      <Counter />
+      <SortBy />
     </InfoWrapper>
   </React.Fragment>
 );
