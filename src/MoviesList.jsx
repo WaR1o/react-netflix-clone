@@ -1,19 +1,40 @@
 import React from "react";
+import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import MovieCard from "./MovieCard";
-import { MOVIES_LIST } from "./mock-data";
+import { getMovies } from "./store/actions";
 import { MoviesGrid } from "./styles";
 
-const movies = MOVIES_LIST.data;
+class MoviesList extends React.Component {
+  componentDidMount() {
+    const { getMovies, isLoaded } = this.props;
+    if (!isLoaded) {
+      getMovies();
+    }
+  }
 
-const MoviesList = props => (
-  <MoviesGrid>
-    {props.movies.map(movie => <MovieCard key={movie.id} {...movie} />)}
-  </MoviesGrid>
-);
+  render() {
+    const { movies, isLoaded } = this.props;
+    if (!isLoaded) return <h1>No Films Found</h1>;
+    return (
+      <MoviesGrid>
+        {movies.map(movie => <MovieCard key={movie.id} {...movie} />)}
+      </MoviesGrid>
+    );
+  }
+}
 
 const mapStateToProps = state => ({
-  movies: state.movies
+  movies: state.movies,
+  isLoaded: state.moviesLoaded
 });
 
-export default connect(mapStateToProps)(MoviesList);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      getMovies
+    },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(MoviesList);

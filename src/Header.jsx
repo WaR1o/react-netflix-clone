@@ -1,8 +1,9 @@
-import React from 'react';
-import { AppTitle, InfoWrapper, SearchBar, SearchWrapper } from './styles';
-import Search from './Search';
-import Counter from './Counter';
-import SortBy from './SortBy';
+import React from "react";
+import { connect } from "react-redux";
+import { AppTitle, InfoWrapper, SearchBar, SearchWrapper } from "./styles";
+import Search from "./Search";
+import Counter from "./Counter";
+import SortBy from "./SortBy";
 
 const Header = props => (
   <React.Fragment>
@@ -13,10 +14,16 @@ const Header = props => (
       </SearchWrapper>
     </SearchBar>
     <InfoWrapper>
-      <Counter />
-      <SortBy />
+      {props.movies.length ? <Counter /> : ""}
+      {props.movies.length ? <SortBy /> : ""}
     </InfoWrapper>
   </React.Fragment>
 );
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    movies: state.movies
+  };
+};
+
+export default connect(mapStateToProps)(Header);

@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
+// Constants
+export const borderRadius = "5px";
+
 // Colors
 export const darkRed = "#E60000";
 export const darkGrey = "#484848";
 export const grey = "#737373";
 export const lighterGray = "#F7F7F7";
-export const borderRadius = "5px";
 
 // Styled components
 export const Wrapper = styled.div`
@@ -78,8 +80,8 @@ export const InfoWrapper = styled.div`
 
 export const MoviesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-gap: 2em;
+  grid-template-columns: repeat(3, 310px);
+  justify-content: space-evenly;
 `;
 
 export const StyledFooter = styled.div`
@@ -91,28 +93,43 @@ export const StyledFooter = styled.div`
 
 export const Card = styled.div`
   grid-column: span 1;
+  justify-self: center;
   border-radius: 4px;
-  margin-bottom: 25px;
   overflow: hidden;
 `;
 
+export const CardInfo = styled.div`
+  display: grid;
+  grid-template-rows: repeat(2, 25px);
+  grid-template-columns: minmax(100px, 270px) 40px;
+`;
+
 export const CardTitle = styled.span`
-  float: left;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  overflow: hidden;
   font-size: 20px;
   font-weight: 700;
   color: ${darkGrey};
 `;
 
 export const Year = styled.span`
-  display: inline-block;
-  float: right;
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
   padding: 2px;
   border: 1px solid ${darkGrey};
   border-radius: 4px;
 `;
 
-export const Genre = styled.span`
+export const Genres = styled.div`
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
   color: ${grey};
+`;
+
+export const Poster = styled.img`
+  max-height: 460px;
+  object-fit: contain;
 `;
 
 export const DetailedMovie = styled.div`
@@ -122,9 +139,4 @@ export const DetailedMovie = styled.div`
   max-height: 600px;
   justify-content: space-evenly;
   background-color: ${lighterGray};
-`;
-
-export const Poster = styled.img`
-  width: 100%;
-  object-fit: contain;
 `;
