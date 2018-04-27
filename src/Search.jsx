@@ -1,23 +1,47 @@
 import React from "react";
-import { Text, Button, SearchInput } from "./styles";
+import { connect } from "react-redux";
+import {
+  Text,
+  Button,
+  SearchInput,
+  InfoWrapper,
+  SearchBar,
+  SearchWrapper
+} from "./styles";
+import Counter from "./Counter";
+import SortBy from "./SortBy";
 
-const Search = () => (
+const Search = props => (
   <div>
-    <Text big>
-      <p>Find your movie</p>
-    </Text>
-    <SearchInput placeholder="Search..." type="text" />
-    <Text>search by</Text>
-    <Button>
-      <Text>Title</Text>
-    </Button>
-    <Button>
-      <Text>Genre</Text>
-    </Button>
-    <Button active big floatR>
-      <Text>Search</Text>
-    </Button>
+    <SearchBar>
+      <SearchWrapper>
+        <Text big>
+          <p>Find your movie</p>
+        </Text>
+        <SearchInput placeholder="Search..." type="text" />
+        <Text>search by</Text>
+        <Button>
+          <Text>Title</Text>
+        </Button>
+        <Button>
+          <Text>Genre</Text>
+        </Button>
+        <Button active big floatR>
+          <Text>Search</Text>
+        </Button>
+      </SearchWrapper>
+    </SearchBar>
+    <InfoWrapper>
+      {props.movies.length ? <Counter /> : ""}
+      {props.movies.length ? <SortBy /> : ""}
+    </InfoWrapper>
   </div>
 );
 
-export default Search;
+const mapStateToProps = state => {
+  return {
+    movies: state.movies
+  };
+};
+
+export default connect(mapStateToProps)(Search);

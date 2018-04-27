@@ -1,4 +1,10 @@
-import { GET_MOVIES, GET_MOVIE, SORT_BY_YEAR, SORT_BY_RATING } from "./actions";
+import {
+  GET_MOVIES,
+  GET_MOVIE,
+  SORT_BY_YEAR,
+  SORT_BY_RATING,
+  RESET_MOVIE
+} from "./actions";
 
 const initialState = {
   movies: [],
@@ -36,6 +42,11 @@ export default (state = initialState, action) => {
         movies: state.movies
           .slice()
           .sort((a, b) => new Date(b.release_date) - new Date(a.release_date))
+      };
+    case RESET_MOVIE:
+      return {
+        ...state,
+        movie: {}
       };
     default:
       return state;
