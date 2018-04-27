@@ -45,19 +45,16 @@ export const SearchInput = styled.input`
   color: white;
 `;
 
-export const SearchBar = styled.div`
+export const HeaderWrapper = styled.div`
   width: 100%;
-  height: 400px;
+  height: 460px;
   background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.65) 100%,
       rgba(0, 0, 0, 0.45) 0%
     ),
     url("/assets/img/netflix-header.jpg");
-`;
-
-export const SearchWrapper = styled.div`
-  padding: 10px 50px 30px;
+  padding: 40px;
 `;
 
 export const AppTitle = styled.h1`
@@ -138,5 +135,5 @@ export const DetailedMovie = styled.div`
   flex-flow: row nowrap;
   max-height: 600px;
   justify-content: space-evenly;
-  background-color: ${lighterGray};
+  color: white;
 `;
