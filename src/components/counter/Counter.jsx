@@ -10,4 +10,5 @@ const mapStateToProps = state => ({
 });
 
 const ConnectedCounter = connect(mapStateToProps)(Counter);
+export const UnwrappedCounter = Counter;
 export { ConnectedCounter as Counter };

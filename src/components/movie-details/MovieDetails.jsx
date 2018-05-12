@@ -9,7 +9,9 @@ import { getMovie, resetMovie } from '../../store/actions';
 class MovieDetails extends React.Component {
   componentDidMount() {
     const { getMovie, match } = this.props;
-    getMovie(match.params.id);
+    if (getMovie && match) {
+      getMovie(match.params.id);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -62,4 +64,5 @@ const mapDispatchToProps = dispatch =>
   );
 
 const ConnectedMovieDetails = connect(mapStateToProps, mapDispatchToProps)(MovieDetails);
+export const UnwrappedMovieDetails = MovieDetails;
 export { ConnectedMovieDetails as MovieDetails };
