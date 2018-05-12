@@ -1,9 +1,9 @@
-import React from "react";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import MovieCard from "./MovieCard";
-import { getMovies } from "./store/actions";
-import { MoviesGrid } from "./styles";
+import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { MovieCard } from '../components';
+import { getMovies } from '../../store/actions';
+import { MoviesGrid } from './MoviesListStyles';
 
 class MoviesList extends React.Component {
   componentDidMount() {
@@ -16,11 +16,7 @@ class MoviesList extends React.Component {
   render() {
     const { movies, isLoaded } = this.props;
     if (!isLoaded) return <h1>No Films Found</h1>;
-    return (
-      <MoviesGrid>
-        {movies.map(movie => <MovieCard key={movie.id} {...movie} />)}
-      </MoviesGrid>
-    );
+    return <MoviesGrid>{movies.map(movie => <MovieCard key={movie.id} {...movie} />)}</MoviesGrid>;
   }
 }
 
@@ -37,4 +33,5 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(MoviesList);
+const ConnectedMoviesList = connect(mapStateToProps, mapDispatchToProps)(MoviesList);
+export { ConnectedMoviesList as MoviesList };

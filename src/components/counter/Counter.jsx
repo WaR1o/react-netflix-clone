@@ -9,4 +9,5 @@ const mapStateToProps = state => ({
   movies: state.movies
 });
 
-export default connect(mapStateToProps)(Counter);
+const ConnectedCounter = connect(mapStateToProps)(Counter);
+export { ConnectedCounter as Counter };

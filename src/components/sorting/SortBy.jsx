@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { sortByRating, sortByYear } from "./store/actions";
+import React from 'react';
+import { connect } from 'react-redux';
+import { sortByRating, sortByYear } from '../../store/actions';
 
 const SortBy = props => (
   <div>
@@ -27,4 +27,5 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SortBy);
+const ConnectedSort = connect(mapStateToProps, mapDispatchToProps)(SortBy);
+export { ConnectedSort as SortBy };

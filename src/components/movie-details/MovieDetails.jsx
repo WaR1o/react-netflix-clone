@@ -1,9 +1,10 @@
-import React from "react";
-import moment from "moment";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import { Poster, DetailedMovie, Year, HeaderWrapper } from "./styles";
-import { getMovie, resetMovie } from "./store/actions";
+import React from 'react';
+import moment from 'moment';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { Poster, Year, HeaderWrapper } from '../../styles/common';
+import { DetailedMovie } from './MovieDetailsStyles';
+import { getMovie, resetMovie } from '../../store/actions';
 
 class MovieDetails extends React.Component {
   componentDidMount() {
@@ -35,7 +36,7 @@ class MovieDetails extends React.Component {
             <h2>{movie.title}</h2>
             <span>{movie.vote_average}</span>
             <br />
-            <span>{moment(movie.release_date).format("YYYY")}</span>
+            <span>{moment(movie.release_date).format('YYYY')}</span>
             <br />
             <span>{movie.runtime} min</span>
             <p>{movie.overview}</p>
@@ -60,4 +61,5 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieDetails);
+const ConnectedMovieDetails = connect(mapStateToProps, mapDispatchToProps)(MovieDetails);
+export { ConnectedMovieDetails as MovieDetails };

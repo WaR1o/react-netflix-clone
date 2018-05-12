@@ -1,14 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import {
-  Text,
-  Button,
-  SearchInput,
-  InfoWrapper,
-  HeaderWrapper
-} from "./styles";
-import Counter from "./Counter";
-import SortBy from "./SortBy";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Counter, SortBy } from '../components';
+import { Text, Button, HeaderWrapper } from '../../styles/common';
+import { SearchInput, InfoWrapper } from './SearchStyles';
 
 const Search = props => (
   <React.Fragment>
@@ -29,8 +23,8 @@ const Search = props => (
       </Button>
     </HeaderWrapper>
     <InfoWrapper>
-      {props.movies.length ? <Counter /> : ""}
-      {props.movies.length ? <SortBy /> : ""}
+      {props.movies.length ? <Counter /> : ''}
+      {props.movies.length ? <SortBy /> : ''}
     </InfoWrapper>
   </React.Fragment>
 );
@@ -41,4 +35,5 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Search);
+const ConnectedSearch = connect(mapStateToProps)(Search);
+export { ConnectedSearch as Search };
