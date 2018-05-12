@@ -1,30 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import moment from 'moment';
 import { Card, CardInfo, CardTitle, Genres } from './MovieCardStyles';
-import { Poster, Year } from '../../styles/common';
+import { Poster, StyledLink, Year } from '../../styles/common';
 
 const MovieCard = props => (
-  <Link to={`/${props.id}`}>
-    <Card>
+  <Card>
+    <StyledLink to={`/${props.id}`}>
       <Poster alt={props.title} src={props.poster_path} />
+    </StyledLink>
+    <br />
+    <CardInfo>
+      <CardTitle>{props.title}</CardTitle>
+      <Year>{moment(props.release_date).format('YYYY')}</Year>
       <br />
-      <CardInfo>
-        <CardTitle>{props.title}</CardTitle>
-        <Year>{moment(props.release_date).format('YYYY')}</Year>
-        <br />
-        <Genres>
-          {props.genres.map((genre, i) => (
-            <span key={i}>
-              {i > 0 ? ' & ' : ''}
-              {genre}
-            </span>
-          ))}
-        </Genres>
-      </CardInfo>
-    </Card>
-  </Link>
+      <Genres>
+        {props.genres.map((genre, i) => (
+          <span key={i}>
+            {i > 0 ? ' & ' : ''}
+            {genre}
+          </span>
+        ))}
+      </Genres>
+    </CardInfo>
+  </Card>
 );
 
 const mapStateToProps = state => ({

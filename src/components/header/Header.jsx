@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { AppTitle } from './HeaderStyles';
 import { MovieDetails } from '../components';
+import { StyledLink } from '../../styles/common';
 
 export const Header = props => (
   <React.Fragment>
-    <Link to="/">
+    <StyledLink to="/">
       <AppTitle>netflixroulette</AppTitle>
-    </Link>
+    </StyledLink>
   </React.Fragment>
 );

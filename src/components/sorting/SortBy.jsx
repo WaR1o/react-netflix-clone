@@ -1,12 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { sortByRating, sortByYear } from '../../store/actions';
+import { ActionLink } from '../../styles/common';
+import { grey } from '../../styles/constants';
 
 const SortBy = props => (
   <div>
     <span>Sort by </span>
-    <span onClick={props.sortByYear}>year </span>
-    <span onClick={props.sortByRating}>rating</span>
+    <ActionLink hoverColor={grey} onClick={props.sortByYear}>
+      year{' '}
+    </ActionLink>
+    <ActionLink hoverColor={grey} onClick={props.sortByRating}>
+      rating
+    </ActionLink>
   </div>
 );
 

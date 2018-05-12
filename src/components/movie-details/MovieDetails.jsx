@@ -2,8 +2,8 @@ import React from 'react';
 import moment from 'moment';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Poster, Year, HeaderWrapper } from '../../styles/common';
-import { DetailedMovie } from './MovieDetailsStyles';
+import { Poster, HeaderWrapper } from '../../styles/common';
+import { DetailedMovie, Duration, MovieTitle, MovieWrapper, Rating, Subheader } from './MovieDetailsStyles';
 import { getMovie, resetMovie } from '../../store/actions';
 
 class MovieDetails extends React.Component {
@@ -34,15 +34,15 @@ class MovieDetails extends React.Component {
       <HeaderWrapper>
         <DetailedMovie>
           <Poster src={movie.poster_path} alt="movie poster" />
-          <div>
-            <h2>{movie.title}</h2>
-            <span>{movie.vote_average}</span>
-            <br />
-            <span>{moment(movie.release_date).format('YYYY')}</span>
-            <br />
-            <span>{movie.runtime} min</span>
+          <MovieWrapper>
+            <MovieTitle>{movie.title}</MovieTitle>
+            <Rating>{movie.vote_average}</Rating>
+            <Subheader>
+              <span>{moment(movie.release_date).format('YYYY')}</span>
+              <Duration>{movie.runtime} min</Duration>
+            </Subheader>
             <p>{movie.overview}</p>
-          </div>
+          </MovieWrapper>
         </DetailedMovie>
       </HeaderWrapper>
     );

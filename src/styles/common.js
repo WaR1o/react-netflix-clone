@@ -1,7 +1,16 @@
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { borderRadius, darkGrey, darkRed, grey, lighterGray } from './constants';
 
 // Styled components
+export const ActionLink = styled.span`
+  &:hover {
+    cursor: pointer;
+    color: ${props => props.hoverColor};
+  }
+`;
+
 export const Button = styled.button`
   margin-left: 10px;
   width: ${props => (props.big ? '120px' : '80px')};
@@ -18,12 +27,24 @@ export const HeaderWrapper = styled.div`
   height: 460px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 100%, rgba(0, 0, 0, 0.45) 0%),
     url('/assets/img/netflix-header.jpg');
-  padding: 40px;
+  padding: 50px 40px 30px;
 `;
 
 export const Poster = styled.img`
   max-height: 460px;
   object-fit: contain;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
+    text-decoration: none;
+  }
 `;
 
 export const Text = styled.span`

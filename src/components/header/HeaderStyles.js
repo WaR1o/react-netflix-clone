@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import { darkRed } from '../../styles/constants';
 
-export const AppTitle = styled.h1`
-  margin: 0 0 50px;
-  padding: 1em auto 1em 3em;
+export const AppTitle = styled.div`
+  position: absolute;
+  top: 20px;
+  padding-left: 40px;
+  font-size: 24px;
   font-weight: 500;
   color: ${darkRed};
 `;
