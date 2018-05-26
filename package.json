@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "set NODE_ENV=development && webpack --mode development",
     "prod": "set NODE_ENV=production && webpack --mode production --devtool source-map",
-    "start": "set NODE_ENV=development && webpack-dev-server --mode development --open",
+    "start": "set NODE_ENV=development && webpack-dev-server --mode development --history-api-fallback --open",
     "test": "set NODE_ENV=test && jest"
   },
   "author": "Pavel_Dederchuk",

@@ -36,7 +36,9 @@ class MovieDetails extends React.Component {
           <Poster src={movie.poster_path} alt="movie poster" />
           <MovieWrapper>
             <MovieTitle>{movie.title}</MovieTitle>
-            <Rating>{movie.vote_average}</Rating>
+            {movie.vote_average > 0 &&
+              <Rating>{movie.vote_average.toFixed(1)}</Rating>
+            }
             <Subheader>
               <span>{moment(movie.release_date).format('YYYY')}</span>
               <Duration>{movie.runtime} min</Duration>

@@ -6,7 +6,7 @@ import { Poster, StyledLink, Year } from '../../styles/common';
 
 const MovieCard = props => (
   <Card>
-    <StyledLink to={`/${props.id}`}>
+    <StyledLink to={`/home/film/${props.id}`}>
       <Poster alt={props.title} src={props.poster_path} />
     </StyledLink>
     <br />
