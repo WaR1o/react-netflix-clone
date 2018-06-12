@@ -1,11 +1,14 @@
-import React from 'react';
+// @flow
+/* eslint-disable no-shadow */
+import * as React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { MovieCard } from '../components';
 import { getMovies } from '../../store/actions';
 import { MoviesGrid } from './MoviesListStyles';
+import type { Movie, State } from '../../../flow-types';
 
-class MoviesList extends React.Component {
+class MoviesList extends React.Component<Movie> {
   componentDidMount() {
     const { getMovies, isLoaded } = this.props;
     if (!isLoaded) {
@@ -20,17 +23,17 @@ class MoviesList extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: State) => ({
   movies: state.movies,
-  isLoaded: state.moviesLoaded
+  isLoaded: state.moviesLoaded,
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      getMovies
+      getMovies,
     },
-    dispatch
+    dispatch,
   );
 
 const ConnectedMoviesList = connect(mapStateToProps, mapDispatchToProps)(MoviesList);

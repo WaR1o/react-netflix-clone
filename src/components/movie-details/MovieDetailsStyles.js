@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 import { darkRed, green, yellow } from '../../styles/constants';
 
-const ratingColor = props => (props.children < 5 ? darkRed : props.children >= 7 ? green : yellow);
+const ratingColor = (props) => {
+  if (props.children < 5) {
+    return darkRed;
+  } else if (props.children >= 7) {
+    return green;
+  }
+  return yellow;
+};
 
 export const DetailedMovie = styled.div`
   width: 100%;

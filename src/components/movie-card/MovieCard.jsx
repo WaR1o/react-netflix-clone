@@ -1,10 +1,12 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import { Card, CardInfo, CardTitle, Genres } from './MovieCardStyles';
 import { Poster, StyledLink, Year } from '../../styles/common';
+import type { Movie, State } from '../../../flow-types';
 
-const MovieCard = props => (
+const MovieCard = (props: Movie): React.Element<any> => (
   <Card>
     <StyledLink to={`/home/film/${props.id}`}>
       <Poster alt={props.title} src={props.poster_path} />
@@ -26,9 +28,9 @@ const MovieCard = props => (
   </Card>
 );
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: State) => ({
   movies: state.movies,
-  movie: state.movie
+  movie: state.movie,
 });
 
 const ConnectedMovieCard = connect(mapStateToProps)(MovieCard);

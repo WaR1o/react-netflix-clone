@@ -1,3 +1,5 @@
+// @flow
+/* eslint-disable no-shadow */
 import React from 'react';
 import moment from 'moment';
 import { bindActionCreators } from 'redux';
@@ -5,8 +7,9 @@ import { connect } from 'react-redux';
 import { Poster, HeaderWrapper } from '../../styles/common';
 import { DetailedMovie, Duration, MovieTitle, MovieWrapper, Rating, Subheader } from './MovieDetailsStyles';
 import { getMovie, resetMovie } from '../../store/actions';
+import type { Movie, State } from '../../../flow-types';
 
-class MovieDetails extends React.Component {
+class MovieDetails extends React.Component<Movie> {
   componentDidMount() {
     const { getMovie, match } = this.props;
     if (getMovie && match) {
@@ -14,7 +17,8 @@ class MovieDetails extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  /* eslint-disable */
+  UNSAFE_componentWillReceiveProps(nextProps: any) {
     if (!this.props.location || !nextProps.location) {
       return;
     }
@@ -27,6 +31,7 @@ class MovieDetails extends React.Component {
     const { resetMovie } = this.props;
     resetMovie();
   }
+  /* eslint-enable */
 
   render() {
     const { movie } = this.props;
@@ -36,9 +41,7 @@ class MovieDetails extends React.Component {
           <Poster src={movie.poster_path} alt="movie poster" />
           <MovieWrapper>
             <MovieTitle>{movie.title}</MovieTitle>
-            {movie.vote_average > 0 &&
-              <Rating>{movie.vote_average.toFixed(1)}</Rating>
-            }
+            {movie.vote_average > 0 && <Rating>{movie.vote_average.toFixed(1)}</Rating>}
             <Subheader>
               <span>{moment(movie.release_date).format('YYYY')}</span>
               <Duration>{movie.runtime} min</Duration>
@@ -51,18 +54,18 @@ class MovieDetails extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: State) => ({
   movies: state.movies,
-  movie: state.movie
+  movie: state.movie,
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       getMovie,
-      resetMovie
+      resetMovie,
     },
-    dispatch
+    dispatch,
   );
 
 const ConnectedMovieDetails = connect(mapStateToProps, mapDispatchToProps)(MovieDetails);

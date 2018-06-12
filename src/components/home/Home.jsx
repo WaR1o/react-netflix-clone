@@ -1,9 +1,9 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import { Header, Footer, MovieDetails, MoviesList, Search } from '../components';
-import { Redirect, Route, Switch } from 'react-router-dom';
 
-
-export const Home = () => (
+export const Home = (): React.Element<any> => (
   <React.Fragment>
     <Header />
     <Switch>
@@ -13,4 +13,4 @@ export const Home = () => (
     <MoviesList />
     <Footer />
   </React.Fragment>
-)
+);

@@ -1,10 +1,12 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import { connect } from 'react-redux';
 import { Counter, SortBy } from '../components';
 import { Text, Button, HeaderWrapper } from '../../styles/common';
 import { SearchInput, InfoWrapper } from './SearchStyles';
+import type { MoviesList, State } from '../../../flow-types';
 
-const Search = props => (
+const Search = (props: MoviesList): React.Element<any> => (
   <React.Fragment>
     <HeaderWrapper>
       <Text big>
@@ -29,11 +31,9 @@ const Search = props => (
   </React.Fragment>
 );
 
-const mapStateToProps = state => {
-  return {
-    movies: state.movies
-  };
-};
+const mapStateToProps = (state: State) => ({
+  movies: state.movies,
+});
 
 const ConnectedSearch = connect(mapStateToProps)(Search);
 export { ConnectedSearch as Search };

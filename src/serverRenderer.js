@@ -2,7 +2,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { ServerStyleSheet } from 'styled-components';
-import App from './components/App';
+import App from './components/App.jsx';
 import { configureStore } from '../src/store/store';
 
 function renderHTML(body, preloadedState, styles) {
@@ -30,14 +30,14 @@ export default function serverRenderer() {
     const store = configureStore();
     const context = {};
     const sheet = new ServerStyleSheet();
-    
-    sheet.collectStyles(<App store={store}/>);
+
+    sheet.collectStyles(<App store={store} />);
 
     const root = <App store={store} context={context} location={req.url} Router={StaticRouter} />;
 
     const styles = sheet.getStyleTags();
     const htmlString = renderToString(root);
-    const preloadedState = store.getState()
+    const preloadedState = store.getState();
 
     res.send(renderHTML(htmlString, preloadedState, styles));
   };

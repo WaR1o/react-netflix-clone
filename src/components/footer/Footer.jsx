@@ -1,4 +1,5 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import { StyledFooter } from './FooterStyles';
 
-export const Footer = () => <StyledFooter>netflixroulette</StyledFooter>;
+export const Footer = (): React.Element<any> => <StyledFooter>netflixroulette</StyledFooter>;

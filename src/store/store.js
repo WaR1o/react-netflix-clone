@@ -10,7 +10,7 @@ export function configureStore(initialState) {
   return createStore(
     reducer,
     initialState,
-    compose(applyMiddleware(...middlewares))
+    compose(applyMiddleware(...middlewares)),
   );
 }
 

@@ -1,9 +1,9 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import { AppTitle } from './HeaderStyles';
-import { MovieDetails } from '../components';
 import { StyledLink } from '../../styles/common';
 
-export const Header = props => (
+export const Header = (): React.Element<any> => (
   <React.Fragment>
     <StyledLink to="/">
       <AppTitle>netflixroulette</AppTitle>

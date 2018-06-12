@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { borderRadius, darkGrey, darkRed, grey, lighterGray } from './constants';
+import { borderRadius, darkGrey, darkRed } from './constants';
 
 // Styled components
 export const ActionLink = styled.span`
@@ -26,7 +25,8 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   height: 460px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 100%, rgba(0, 0, 0, 0.45) 0%),
-    url('/assets/img/netflix-header.jpg');
+  url('https://preview.ibb.co/g5rn3T/netflix_header.jpg');
+  object-fit: contain;
   padding: 50px 40px 30px;
 `;
 

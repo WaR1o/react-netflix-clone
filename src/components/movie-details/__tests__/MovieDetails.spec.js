@@ -1,7 +1,8 @@
+/* eslint-env node, jest */
 import React from 'react';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { UnwrappedMovieDetails } from '../MovieDetails';
+import { UnwrappedMovieDetails } from '../MovieDetails.jsx';
 import { SINGLE_MOVIE } from '../../../mock-data';
 
 configure({ adapter: new Adapter() });

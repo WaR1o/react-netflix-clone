@@ -13,7 +13,7 @@ export const MOVIES_LIST = {
       budget: 55000000,
       revenue: 136906000,
       genres: ['Drama', 'Romance'],
-      runtime: 106
+      runtime: 106,
     },
     {
       id: 269149,
@@ -28,7 +28,7 @@ export const MOVIES_LIST = {
       budget: 150000000,
       revenue: 1023784195,
       genres: ['Animation', 'Adventure', 'Family', 'Comedy'],
-      runtime: 108
+      runtime: 108,
     },
     {
       id: 181808,
@@ -43,7 +43,7 @@ export const MOVIES_LIST = {
       budget: 200000000,
       revenue: 1325937250,
       genres: ['Fantasy', 'Adventure', 'Science Fiction'],
-      runtime: 152
+      runtime: 152,
     },
     {
       id: 284054,
@@ -58,7 +58,7 @@ export const MOVIES_LIST = {
       budget: 200000000,
       revenue: 1245257672,
       genres: ['Action', 'Adventure', 'Fantasy', 'Science Fiction'],
-      runtime: 134
+      runtime: 134,
     },
     {
       id: 354912,
@@ -73,7 +73,7 @@ export const MOVIES_LIST = {
       budget: 175000000,
       revenue: 700920729,
       genres: ['Adventure', 'Comedy', 'Family', 'Animation'],
-      runtime: 105
+      runtime: 105,
     },
     {
       id: 333339,
@@ -88,7 +88,7 @@ export const MOVIES_LIST = {
       budget: 175000000,
       revenue: 0,
       genres: ['Adventure', 'Science Fiction', 'Action'],
-      runtime: 140
+      runtime: 140,
     },
     {
       id: 338970,
@@ -103,7 +103,7 @@ export const MOVIES_LIST = {
       budget: 94000000,
       revenue: 126025000,
       genres: ['Action', 'Adventure'],
-      runtime: 118
+      runtime: 118,
     },
     {
       id: 284053,
@@ -118,7 +118,7 @@ export const MOVIES_LIST = {
       budget: 180000000,
       revenue: 854229371,
       genres: ['Action', 'Adventure', 'Fantasy'],
-      runtime: 130
+      runtime: 130,
     },
     {
       id: 321612,
@@ -133,7 +133,7 @@ export const MOVIES_LIST = {
       budget: 160000000,
       revenue: 1263521126,
       genres: ['Family', 'Fantasy', 'Romance'],
-      runtime: 129
+      runtime: 129,
     },
     {
       id: 399055,
@@ -148,12 +148,12 @@ export const MOVIES_LIST = {
       budget: 19500000,
       revenue: 185545281,
       genres: ['Drama', 'Fantasy', 'Romance'],
-      runtime: 123
-    }
+      runtime: 123,
+    },
   ],
   total: 3000,
   offset: 0,
-  limit: 10
+  limit: 10,
 };
 
 export const SINGLE_MOVIE = MOVIES_LIST.data[0];

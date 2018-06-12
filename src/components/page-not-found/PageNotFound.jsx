@@ -1,5 +1,4 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 
-export const PageNotFound = () => (
-  <h1>Page not found</h1>
-);
+export const PageNotFound = (): React.Element<any> => <h1>Page not found</h1>;

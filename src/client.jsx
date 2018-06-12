@@ -1,13 +1,10 @@
+/* globals window, document */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import App from './components/App';
-import { PageNotFound } from './components/components';
+import { BrowserRouter } from 'react-router-dom';
+import App from './components/App.jsx';
 import { configureStore } from './store/store';
-import { getInitialNotes } from './store/actions';
 
 const store = configureStore(window.PRELOADED_STATE);
 
-ReactDOM.hydrate(<App Router={BrowserRouter} store={store} />,
-  document.getElementById('app')
-);
+ReactDOM.hydrate(<App Router={BrowserRouter} store={store} />, document.getElementById('app'));
