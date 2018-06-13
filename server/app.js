@@ -1,7 +1,9 @@
 /* eslint-disable */
 const express = require('express');
+const compression = require('compression');
 
 const app = express();
+app.use(compression());
 
 if (process.env.NODE_ENV === 'development') {
   const webpack = require('webpack');
