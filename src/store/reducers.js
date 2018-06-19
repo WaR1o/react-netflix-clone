@@ -6,7 +6,7 @@ import {
   RESET_MOVIE,
 } from './actions';
 
-const initialState = {
+export const initialState = {
   movies: [],
   movie: {},
   searchTerm: '',

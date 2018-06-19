@@ -4,6 +4,8 @@ import { StaticRouter } from 'react-router-dom';
 import { ServerStyleSheet } from 'styled-components';
 import App from './components/App.jsx';
 import { configureStore } from '../src/store/store';
+import { initialState } from '../src/store/reducers';
+import { MOVIES_LIST } from './mock-data';
 
 function renderHTML(body, preloadedState, styles) {
   return `
@@ -27,7 +29,8 @@ function renderHTML(body, preloadedState, styles) {
 
 export default function serverRenderer() {
   return (req, res) => {
-    const store = configureStore();
+    const state = { ...initialState, movies: MOVIES_LIST.data };
+    const store = configureStore(state);
     const context = {};
     const sheet = new ServerStyleSheet();
 
