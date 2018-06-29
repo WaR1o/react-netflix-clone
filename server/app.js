@@ -4,6 +4,7 @@ const compression = require('compression');
 
 const app = express();
 app.use(compression());
+app.use(express.static('assets'));
 
 if (process.env.NODE_ENV === 'development') {
   const webpack = require('webpack');

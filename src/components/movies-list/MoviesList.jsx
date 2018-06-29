@@ -10,15 +10,15 @@ import type { Movie, State } from '../../../flow-types';
 
 class MoviesList extends React.Component<Movie> {
   componentDidMount() {
-    const { getMovies, isLoaded } = this.props;
-    if (!isLoaded) {
+    const { getMovies, movies } = this.props;
+    if (!movies) {
       getMovies();
     }
   }
 
   render() {
-    const { movies, isLoaded } = this.props;
-    if (!isLoaded) return <h1>No Films Found</h1>;
+    const { movies } = this.props;
+    if (!movies) return <h1>No Films Found</h1>;
     return <MoviesGrid>{movies.map(movie => <MovieCard key={movie.id} {...movie} />)}</MoviesGrid>;
   }
 }
