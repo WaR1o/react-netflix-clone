@@ -25,7 +25,7 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   height: 460px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 100%, rgba(0, 0, 0, 0.45) 0%),
-  url('https://preview.ibb.co/g5rn3T/netflix_header.jpg');
+    url('https://preview.ibb.co/g5rn3T/netflix_header.jpg');
   object-fit: contain;
   padding: 50px 40px 30px;
 `;

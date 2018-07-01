@@ -14,6 +14,7 @@ export const SearchInput = styled.input`
 `;
 
 export const InfoWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-flow: row nowrap;
   padding: 15px 40px;
