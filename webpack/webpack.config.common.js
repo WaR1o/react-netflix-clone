@@ -44,27 +44,31 @@ module.exports = {
       },
 
       {
-        test: /\.jpg?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              emitFile: true,
-              outputPath: 'images/',
-              publicPath: 'assets/',
-            },
-          },
-        ],
+        test: /\.(jpe?g|png|gif)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10 * 1024,
+        },
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/,
+        loader: 'image-webpack-loader',
+        options: {
+          name: '[name].[ext]',
+          emitFile: true,
+          outputPath: 'images/',
+          publicPath: 'assets/',
+        },
       },
     ],
   },
 
   plugins: [
-    new CopyWebpackPlugin([{
-      from: 'src/assets/',
-    }]),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/assets/',
+      },
+    ]),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
       plugins: [
