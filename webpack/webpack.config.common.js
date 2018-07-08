@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const isDevMod = process.env.NODE_ENV === 'development';
 
@@ -64,6 +65,7 @@ module.exports = {
   },
 
   plugins: [
+    new BundleAnalyzerPlugin(),
     new CopyWebpackPlugin([
       {
         from: 'src/assets/',
